@@ -29,3 +29,9 @@ func Version(version string) OptFunc {
 		option.version = version
 	}
 }
+
+func Servers(servers ...Server) OptFunc {
+	return func(option *Option) {
+		option.servers = servers
+	}
+}

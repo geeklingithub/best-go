@@ -22,8 +22,8 @@ type Server interface {
 	Stop(context.Context)
 }
 
-// Init 应用初始化
-func Init(opts ...OptFunc) *App {
+// New 应用创建
+func New(opts ...OptFunc) *App {
 	//初始化配置项
 
 	//默认配置
