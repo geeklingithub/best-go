@@ -21,7 +21,7 @@ func TestApp(t *testing.T) {
 		Servers(businessHttp, adminHttp),
 	)
 	app.Start()
-	time.AfterFunc(time.Second, func() {
+	time.AfterFunc(time.Minute, func() {
 		app.Stop()
 	})
 	time.Sleep(time.Hour)

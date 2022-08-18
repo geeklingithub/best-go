@@ -51,21 +51,27 @@ func (app *App) Start() {
 	wg := &sync.WaitGroup{}
 	for _, server := range app.servers {
 		wg.Add(1)
-
+		server := server
 		//服务关闭
 		go func() {
 			//应用关闭时,关闭服务
 			<-app.ctx.Done()
 			ctx, cancel := context.WithTimeout(app.ctx, app.stopTimeOut)
 			defer cancel()
-			server.Stop(ctx)
+			err := server.Stop(ctx)
+			if err != nil {
+				return
+			}
 		}()
 
 		//服务启动
-		server := server
+
 		go func() {
 			wg.Done()
-			server.Start(app.ctx)
+			err := server.Start(app.ctx)
+			if err != nil {
+				return
+			}
 		}()
 	}
 

@@ -14,7 +14,7 @@ type Server struct {
 }
 
 // Init 服务初始化
-func New(opts ...OptFunc) *Server {
+func New(opts ...OptFunc) Server {
 	//初始化配置项
 	//默认配置
 	o := &Option{}
@@ -26,7 +26,7 @@ func New(opts ...OptFunc) *Server {
 
 	//返回应用实例对象
 	ctx, cancel := context.WithCancel(context.Background())
-	return &Server{
+	return Server{
 		server: &http.Server{},
 		Option: o,
 		cancel: cancel,
@@ -35,17 +35,18 @@ func New(opts ...OptFunc) *Server {
 }
 
 // Start 服务启动
-func (server *Server) Start(context.Context) error {
+func (server Server) Start(context.Context) error {
 
 	for routerPath, handleFunc := range server.Option.routerMap {
 		http.HandleFunc(routerPath, handleFunc)
 	}
 	fmt.Println("http 启动 ", server.Option.address)
-	return http.ListenAndServe(server.Option.address, nil)
+	server.server.Addr = server.Option.address
+	return server.server.ListenAndServe()
 }
 
 // Stop 服务关闭
-func (server *Server) Stop(ctx context.Context) error {
+func (server Server) Stop(ctx context.Context) error {
 	fmt.Println("http 关闭 ", server.Option.address)
 	return server.server.Shutdown(ctx)
 }
