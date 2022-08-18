@@ -35,17 +35,17 @@ func New(opts ...OptFunc) *Server {
 }
 
 // Start 服务启动
-func (server *Server) Start(context.Context) {
+func (server *Server) Start(context.Context) error {
 
 	for routerPath, handleFunc := range server.Option.routerMap {
 		http.HandleFunc(routerPath, handleFunc)
 	}
-
-	http.ListenAndServe(server.Option.address, nil)
 	fmt.Println("http 启动 ", server.Option.address)
+	return http.ListenAndServe(server.Option.address, nil)
 }
 
 // Stop 服务关闭
-func (server *Server) Stop(context.Context) {
+func (server *Server) Stop(ctx context.Context) error {
 	fmt.Println("http 关闭 ", server.Option.address)
+	return server.server.Shutdown(ctx)
 }

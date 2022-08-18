@@ -18,8 +18,8 @@ type App struct {
 
 // Server 服务接口
 type Server interface {
-	Start(context.Context)
-	Stop(context.Context)
+	Start(context.Context) error
+	Stop(context.Context) error
 }
 
 // New 应用创建
@@ -56,7 +56,9 @@ func (app *App) Start() {
 		go func() {
 			//应用关闭时,关闭服务
 			<-app.ctx.Done()
-			server.Stop(app.ctx)
+			ctx, cancel := context.WithTimeout(app.ctx, app.stopTimeOut)
+			defer cancel()
+			server.Stop(ctx)
 		}()
 
 		//服务启动

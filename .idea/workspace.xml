@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="规划目录">
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/http/http_test.go" afterDir="false" />
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加http路由映射">
+      <change afterPath="$PROJECT_DIR$/TEST.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/option.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/option.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/http/http_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/testhttp.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +21,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go File" />
+        <option value="HTTP Request" />
       </list>
     </option>
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -56,6 +58,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\GolandProjects\best-go\server\http" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server\grpc" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\app" />
     </key>
@@ -63,7 +66,7 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestApp in github.com/geeklingithub/best-go/app">
+  <component name="RunManager" selected="HTTP Request.TEST | GET request with a header#1">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -103,9 +106,21 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="TEST | GET request with a header" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="TEST | GET request with a header#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="TEST | GET request with a header#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" index="2" requestIdentifier="GET request with a header#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.TEST | GET request with a header#1" />
         <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
+        <item itemvalue="HTTP Request.TEST | GET request with a header#2" />
+        <item itemvalue="HTTP Request.TEST | GET request with a header" />
         <item itemvalue="Go Test.TestPoolNew in pool_test.go" />
       </list>
     </recent_temporary>
@@ -129,7 +144,8 @@
     <MESSAGE value="应用停起服" />
     <MESSAGE value="pool测试" />
     <MESSAGE value="规划目录" />
-    <option name="LAST_COMMIT_MESSAGE" value="规划目录" />
+    <MESSAGE value="增加http路由映射" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加http路由映射" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

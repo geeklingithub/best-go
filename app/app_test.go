@@ -8,11 +8,11 @@ import (
 
 func TestApp(t *testing.T) {
 	businessHttp := http.New(
-		http.Address("127.0.0.1:8080"),
+		http.Address("127.0.0.1:8088"),
 		http.RouterMap(http.BusinessRouter()),
 	)
 	adminHttp := http.New(
-		http.Address("127.0.0.1:8081"),
+		http.Address("127.0.0.1:8089"),
 		http.RouterMap(http.AdminRouter()),
 	)
 	app := New(
@@ -24,5 +24,5 @@ func TestApp(t *testing.T) {
 	time.AfterFunc(time.Second, func() {
 		app.Stop()
 	})
-	time.Sleep(time.Minute)
+	time.Sleep(time.Hour)
 }
