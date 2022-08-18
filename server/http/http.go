@@ -34,11 +34,11 @@ func Init(opts ...OptFunc) *Server {
 }
 
 // Start 服务启动
-func (server *Server) Start() {
+func (server *Server) Start(context.Context) {
 
 }
 
 // Stop 服务关闭
-func (server *Server) Stop() {
+func (server *Server) Stop(context.Context) {
 
 }
