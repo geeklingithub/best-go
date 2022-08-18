@@ -47,6 +47,8 @@ func (server Server) Start(context.Context) error {
 
 // Stop 服务关闭
 func (server Server) Stop(ctx context.Context) error {
-	fmt.Println("http 关闭 ", server.Option.address)
-	return server.server.Shutdown(ctx)
+	fmt.Println("http 开始优雅关闭 ", server.Option.address)
+	err := server.server.Shutdown(ctx)
+	server.shutdown()
+	return err
 }

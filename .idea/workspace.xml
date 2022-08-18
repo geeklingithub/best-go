@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加http优雅退出调用">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/http.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/http/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/option.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.TEST | GET request with a header#2">
+  <component name="RunManager" selected="HTTP Request.TEST | GET request with a header#1">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -115,8 +115,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.TEST | GET request with a header#2" />
         <item itemvalue="HTTP Request.TEST | GET request with a header#1" />
+        <item itemvalue="HTTP Request.TEST | GET request with a header#2" />
         <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
         <item itemvalue="HTTP Request.TEST | GET request with a header" />
         <item itemvalue="Go Test.TestPoolNew in pool_test.go" />
@@ -151,6 +151,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/app/app_test.go</url>
+          <line>31</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="DlvErrorBreakpoint" />
       </default-breakpoints>
