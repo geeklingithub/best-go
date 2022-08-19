@@ -1,9 +1,15 @@
 ### GET request with a header
-GET http://127.0.0.1:8088/admin
+POST http://127.0.0.1:8088/admin
 Accept: application/json
 
 
-### GET request with a header
-GET http://127.0.0.1:8089/login
-Accept: application/json
 
+
+###
+POST http://127.0.0.1:8088/login
+Content-Type: application/json
+
+{
+  "openId": "998",
+  "playerId": 12345
+}

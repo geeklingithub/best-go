@@ -1,22 +1,28 @@
 package http
 
-func BusinessRouter() map[string]func() any {
-	return map[string]func() any{
-		"/login": func() any {
+import "fmt"
+
+func BusinessRouter() map[string]func(any) any {
+	return map[string]func(any) any{
+		"/login": func(req any) any {
+			fmt.Println(req)
 			return "/login"
 		},
-		"/createPlayer": func() any {
+		"/createPlayer": func(req any) any {
+			fmt.Println(req)
 			return "/createPlayer"
 		},
-		"/selectGateway": func() any {
+		"/selectGateway": func(req any) any {
+			fmt.Println(req)
 			return "/selectGateway"
 		},
 	}
 }
 
-func AdminRouter() map[string]func() any {
-	return map[string]func() any{
-		"/admin": func() any {
+func AdminRouter() map[string]func(any) any {
+	return map[string]func(any) any{
+		"/admin": func(req any) any {
+			fmt.Println(req)
 			return LoginReq{
 				PlayerId: 1,
 				OpenId:   "Reds",

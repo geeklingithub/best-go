@@ -58,19 +58,32 @@ func (server *Server) Stop(ctx context.Context) error {
 	return err
 }
 
-func (server *Server) AddRouter(routerMap map[string]func() any) {
+func (server *Server) AddRouter(routerMap map[string]func(any) any) {
 	for key, value := range routerMap {
-		server.routerMap[key] = server.HandleFunc(value)
+		server.routerMap[key] = server.HandleFunc(key, value)
 	}
 }
 
-func (server *Server) HandleFunc(f func() any) func(writer http.ResponseWriter, request *http.Request) {
+func (server *Server) HandleFunc(key string, f func(any) any) func(writer http.ResponseWriter, request *http.Request) {
 	return func(writer http.ResponseWriter, request *http.Request) {
+
+		// todo 完善 map泛型
+		var login LoginReq
+		req := map[string]any{
+			"/login": login,
+		}[key]
+
 		if server.shutdown {
 			writer.Write([]byte("shutdown中,拒绝请求"))
 			return
 		}
-		resp := f()
+		len := request.ContentLength
+		body := make([]byte, len)
+		// 将请求体中内容读到body中
+		request.Body.Read(body)
+
+		json.Unmarshal(body, &req)
+		resp := f(req)
 		v, _ := json.Marshal(resp)
 		writer.Write(v)
 	}
