@@ -1,11 +1,9 @@
 package http
 
-import "net/http"
-
 type Option struct {
-	address   string
-	routerMap map[string]func(writer http.ResponseWriter, request *http.Request)
-	shutdown  func()
+	address string
+
+	shutdownFunc func()
 }
 
 type OptFunc func(*Option)
@@ -16,14 +14,8 @@ func Address(address string) OptFunc {
 	}
 }
 
-func RouterMap(routerMap map[string]func(writer http.ResponseWriter, request *http.Request)) OptFunc {
+func ShutdownFunc(shutdownFunc func()) OptFunc {
 	return func(option *Option) {
-		option.routerMap = routerMap
-	}
-}
-
-func Shutdown(shutdownFunc func()) OptFunc {
-	return func(option *Option) {
-		option.shutdown = shutdownFunc
+		option.shutdownFunc = shutdownFunc
 	}
 }

@@ -11,9 +11,10 @@ import (
 
 // App 应用
 type App struct {
-	*Option                    //应用配置项
-	ctx     context.Context    //应用上下文
-	cancel  context.CancelFunc //上下文取消信号
+	*AppOption                    //应用配置项
+	cancel     context.CancelFunc //上下文取消信号
+	ctx        context.Context
+	reject     bool
 }
 
 // Server 服务接口
@@ -27,7 +28,8 @@ func New(opts ...OptFunc) *App {
 	//初始化配置项
 
 	//默认配置
-	o := &Option{
+	o := &AppOption{
+		ctx:          context.Background(),
 		closeSignals: []os.Signal{syscall.SIGTERM, syscall.SIGINT, syscall.SIGQUIT},
 	}
 
@@ -37,11 +39,11 @@ func New(opts ...OptFunc) *App {
 	}
 
 	//返回应用实例对象
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(o.ctx)
 	return &App{
-		Option: o,
-		cancel: cancel,
-		ctx:    ctx,
+		AppOption: o,
+		cancel:    cancel,
+		ctx:       ctx,
 	}
 }
 
@@ -49,26 +51,25 @@ func New(opts ...OptFunc) *App {
 func (app *App) Start() {
 
 	wg := &sync.WaitGroup{}
-	for _, server := range app.servers {
+	for i, _ := range app.servers {
 		wg.Add(1)
-		server := server
+		i := i
 		//服务关闭
 		go func() {
 			//应用关闭时,关闭服务
 			<-app.ctx.Done()
-			ctx, cancel := context.WithTimeout(app.ctx, app.stopTimeOut)
+			ctx, cancel := context.WithTimeout(app.ctx, app.shutdownTimeOut)
 			defer cancel()
-			err := server.Stop(ctx)
+			err := app.servers[i].Stop(ctx)
 			if err != nil {
 				return
 			}
 		}()
 
 		//服务启动
-
 		go func() {
 			wg.Done()
-			err := server.Start(app.ctx)
+			err := app.servers[i].Start(app.ctx)
 			if err != nil {
 				return
 			}
