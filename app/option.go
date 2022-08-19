@@ -1,7 +1,6 @@
 package app
 
 import (
-	"context"
 	"log"
 	"os"
 	"time"
@@ -9,13 +8,12 @@ import (
 
 // AppOption 配置项
 type AppOption struct {
-	ctx             context.Context //上下文
-	name            string          //应用名称
-	version         string          //应用版本
-	logger          log.Logger      //应用日志
-	servers         []Server        //应用服务列表
-	shutdownTimeOut time.Duration   //应用优雅关服超时时间
-	closeSignals    []os.Signal     //应用关服信号
+	name            string        //应用名称
+	version         string        //应用版本
+	logger          log.Logger    //应用日志
+	servers         []Server      //应用服务列表
+	shutdownTimeOut time.Duration //应用优雅关服超时时间
+	closeSignals    []os.Signal   //应用关服信号
 }
 
 type OptFunc func(option *AppOption)

@@ -40,7 +40,7 @@ func TestApp(t *testing.T) {
 
 	//启动应用
 	app.Start()
-	time.AfterFunc(20*time.Second, func() {
+	time.AfterFunc(5*time.Second, func() {
 		app.Stop()
 	})
 	time.Sleep(time.Hour)

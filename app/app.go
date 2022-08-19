@@ -14,7 +14,6 @@ type App struct {
 	*AppOption                    //应用配置项
 	cancel     context.CancelFunc //上下文取消信号
 	ctx        context.Context
-	reject     bool
 }
 
 // Server 服务接口
@@ -29,7 +28,6 @@ func New(opts ...OptFunc) *App {
 
 	//默认配置
 	o := &AppOption{
-		ctx:          context.Background(),
 		closeSignals: []os.Signal{syscall.SIGTERM, syscall.SIGINT, syscall.SIGQUIT},
 	}
 
@@ -39,7 +37,7 @@ func New(opts ...OptFunc) *App {
 	}
 
 	//返回应用实例对象
-	ctx, cancel := context.WithCancel(o.ctx)
+	ctx, cancel := context.WithCancel(context.Background())
 	return &App{
 		AppOption: o,
 		cancel:    cancel,
@@ -51,7 +49,7 @@ func New(opts ...OptFunc) *App {
 func (app *App) Start() {
 
 	wg := &sync.WaitGroup{}
-	for i, _ := range app.servers {
+	for i := 0; i < len(app.servers); i++ {
 		wg.Add(1)
 		i := i
 		//服务关闭
