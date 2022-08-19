@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加http优雅退出回调处理">
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加http优雅关服时,拒绝新请求处理">
+      <change afterPath="$PROJECT_DIR$/demo/debug/heapdump_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/debug/stack_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/sync/once/once_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ptotocol/json/json_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/option.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/option.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/http/testhttp.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/testhttp.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTTP Request" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -54,7 +56,8 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/GolandProjects/best-go/server/http&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/GolandProjects/best-go/server/http&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -64,22 +67,11 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\GolandProjects\best-go\demo\debug" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
   <component name="RunManager" selected="HTTP Request.TEST | GET request with a header#2">
-    <configuration name="TestApp in github.com/geeklingithub/best-go/app (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$/app" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/app" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestApp\E$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestApp in github.com/geeklingithub/best-go/app" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$/app" />
@@ -92,7 +84,28 @@
       <pattern value="^\QTestApp\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TEST | GET request with a header" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header" runType="Run single request">
+    <configuration name="TestJson in github.com/geeklingithub/best-go/ptotocol/json" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$/ptotocol/json" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/ptotocol/json" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestJson\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestJson2Object in github.com/geeklingithub/best-go/ptotocol/json" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$/ptotocol/json" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/ptotocol/json" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestJson2Object\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TEST | GET request with a header#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header#1" runType="Run single request">
@@ -105,9 +118,9 @@
       <list>
         <item itemvalue="HTTP Request.TEST | GET request with a header#2" />
         <item itemvalue="HTTP Request.TEST | GET request with a header#1" />
-        <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app (1)" />
         <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
-        <item itemvalue="HTTP Request.TEST | GET request with a header" />
+        <item itemvalue="Go Test.TestJson2Object in github.com/geeklingithub/best-go/ptotocol/json" />
+        <item itemvalue="Go Test.TestJson in github.com/geeklingithub/best-go/ptotocol/json" />
       </list>
     </recent_temporary>
   </component>
@@ -132,16 +145,27 @@
     <MESSAGE value="规划目录" />
     <MESSAGE value="增加http路由映射" />
     <MESSAGE value="增加http优雅退出调用" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加http优雅退出调用" />
+    <MESSAGE value="增加http优雅关服时,拒绝新请求处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加http优雅关服时,拒绝新请求处理" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/demo/sync/once/once_test.go</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="DlvErrorBreakpoint" />
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/best_go$TestWriteHeapDumpFinalizers_in_github_com_geeklingithub_best_go_demo.out" NAME="TestWriteHeapDumpFinalizers in github.com/geeklingithub/best-go/demo Coverage Results" MODIFIED="1660898156566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

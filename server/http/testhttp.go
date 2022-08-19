@@ -1,25 +1,31 @@
 package http
 
-import "net/http"
-
-func BusinessRouter() map[string]func(writer http.ResponseWriter, request *http.Request) {
-	return map[string]func(writer http.ResponseWriter, request *http.Request){
-		"/login": func(writer http.ResponseWriter, request *http.Request) {
-			writer.Write([]byte("/login"))
+func BusinessRouter() map[string]func() any {
+	return map[string]func() any{
+		"/login": func() any {
+			return "/login"
 		},
-		"/createPlayer": func(writer http.ResponseWriter, request *http.Request) {
-			writer.Write([]byte("/createPlayer"))
+		"/createPlayer": func() any {
+			return "/createPlayer"
 		},
-		"/selectGateway": func(writer http.ResponseWriter, request *http.Request) {
-			writer.Write([]byte("/selectGateway"))
+		"/selectGateway": func() any {
+			return "/selectGateway"
 		},
 	}
 }
 
-func AdminRouter() map[string]func(writer http.ResponseWriter, request *http.Request) {
-	return map[string]func(writer http.ResponseWriter, request *http.Request){
-		"/admin": func(writer http.ResponseWriter, request *http.Request) {
-			writer.Write([]byte("/admin"))
+func AdminRouter() map[string]func() any {
+	return map[string]func() any{
+		"/admin": func() any {
+			return LoginReq{
+				PlayerId: 1,
+				OpenId:   "Reds",
+			}
 		},
 	}
+}
+
+type LoginReq struct {
+	OpenId   string
+	PlayerId uint64
 }

@@ -2,6 +2,7 @@ package http
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
@@ -57,18 +58,20 @@ func (server *Server) Stop(ctx context.Context) error {
 	return err
 }
 
-func (server *Server) AddRouter(routerMap map[string]func(writer http.ResponseWriter, request *http.Request)) {
+func (server *Server) AddRouter(routerMap map[string]func() any) {
 	for key, value := range routerMap {
 		server.routerMap[key] = server.HandleFunc(value)
 	}
 }
 
-func (server *Server) HandleFunc(f func(writer http.ResponseWriter, request *http.Request)) func(writer http.ResponseWriter, request *http.Request) {
+func (server *Server) HandleFunc(f func() any) func(writer http.ResponseWriter, request *http.Request) {
 	return func(writer http.ResponseWriter, request *http.Request) {
 		if server.shutdown {
 			writer.Write([]byte("shutdown中,拒绝请求"))
 			return
 		}
-		f(writer, request)
+		resp := f()
+		v, _ := json.Marshal(resp)
+		writer.Write(v)
 	}
 }

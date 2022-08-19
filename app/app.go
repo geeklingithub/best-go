@@ -4,7 +4,6 @@ import (
 	"context"
 	"os"
 	"os/signal"
-	"runtime"
 	"sync"
 	"syscall"
 )
@@ -91,7 +90,7 @@ func (app *App) Start() {
 			signal.Notify(c, app.closeSignals...)
 			go func() {
 				<-force
-				runtime.Goexit()
+				os.Exit(1)
 			}()
 			//优雅关闭应用
 			app.Stop()
@@ -101,6 +100,5 @@ func (app *App) Start() {
 
 // Stop 应用关闭
 func (app *App) Stop() {
-
 	app.cancel()
 }
