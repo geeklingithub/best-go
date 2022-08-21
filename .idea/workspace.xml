@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="优化http,请求响应写法">
+      <change afterPath="$PROJECT_DIR$/demo/func_dec/funcs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/if_else/ifelse.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/package_dec/multi_same/a.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/package_dec/multi_same/b.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/package_dec/not_same/not_same.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/string/string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/switch/switch.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/var_and_const/assignment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/var_and_const/const.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/var_and_const/var.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/var_and_const/var_wrong.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kit/list/arraylist.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kit/list/arraylist_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TEST.http" beforeDir="false" afterPath="$PROJECT_DIR$/TEST.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/testhttp.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/testhttp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,25 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/GolandProjects/best-go/server/http&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/86133/GolandProjects/best-go/demo",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\86133\GolandProjects\best-go\demo" />
+      <recent name="C:\Users\86133\GolandProjects\best-go\demo\string" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server\http" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server\grpc" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\app" />
@@ -66,35 +79,47 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.TEST | #2">
-    <configuration name="TestApp in github.com/geeklingithub/best-go/app" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build github.com/geeklingithub/best-go/demo/switch">
+    <configuration name="go build github.com/geeklingithub/best-go/demo/if_else" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$/app" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/demo/if_else" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/demo/if_else/ifelse.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/geeklingithub/best-go/demo/switch" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/demo/switch" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/demo/switch/switch.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestArrayListAppend in github.com/geeklingithub/best-go/kit/list" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$/kit/list" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/app" />
+      <package value="github.com/geeklingithub/best-go/kit/list" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestApp\E$" />
+      <pattern value="^\QTestArrayListAppend\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestJson2Object in github.com/geeklingithub/best-go/ptotocol/json" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestArrayListAppend/append_234 in github.com/geeklingithub/best-go/kit/list" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$/ptotocol/json" />
+      <working_directory value="$PROJECT_DIR$/kit/list" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/ptotocol/json" />
+      <package value="github.com/geeklingithub/best-go/kit/list" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestJson2Object\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TEST | GET request with a header#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header#1" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="TEST | GET request with a header#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" index="2" requestIdentifier="GET request with a header#2" runType="Run single request">
+      <pattern value="^\QTestArrayListAppend\E$/^\Qappend_234\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TEST | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" index="2" requestIdentifier="#2" runType="Run single request">
@@ -102,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/switch" />
+        <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/if_else" />
+        <item itemvalue="Go Test.TestArrayListAppend in github.com/geeklingithub/best-go/kit/list" />
+        <item itemvalue="Go Test.TestArrayListAppend/append_234 in github.com/geeklingithub/best-go/kit/list" />
         <item itemvalue="HTTP Request.TEST | #2" />
-        <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
-        <item itemvalue="HTTP Request.TEST | GET request with a header#2" />
-        <item itemvalue="HTTP Request.TEST | GET request with a header#1" />
-        <item itemvalue="Go Test.TestJson2Object in github.com/geeklingithub/best-go/ptotocol/json" />
       </list>
     </recent_temporary>
   </component>
