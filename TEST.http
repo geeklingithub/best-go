@@ -1,5 +1,5 @@
 ### GET request with a header
-POST http://127.0.0.1:8088/admin
+POST http://127.0.0.1:8088/createPlayer
 Accept: application/json
 
 

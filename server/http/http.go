@@ -1,4 +1,4 @@
-package http
+package best_http
 
 import (
 	"context"
@@ -10,13 +10,13 @@ import (
 type Server struct {
 	server *http.Server
 	*Option
-	ctx       context.Context
-	cancel    context.CancelFunc
-	shutdown  bool
-	routerMap map[string]func(writer http.ResponseWriter, request *http.Request)
+	ctx      context.Context
+	cancel   context.CancelFunc
+	shutdown bool
+	router   *Router
 }
 
-// Init 服务初始化
+// New 服务初始化
 func New(opts ...OptFunc) *Server {
 	//初始化配置项
 	//默认配置
@@ -30,20 +30,20 @@ func New(opts ...OptFunc) *Server {
 	//返回应用实例对象
 	ctx, cancel := context.WithCancel(context.Background())
 	return &Server{
-		server:    &http.Server{},
-		Option:    o,
-		cancel:    cancel,
-		ctx:       ctx,
-		shutdown:  false,
-		routerMap: map[string]func(writer http.ResponseWriter, request *http.Request){},
+		server:   &http.Server{},
+		Option:   o,
+		cancel:   cancel,
+		ctx:      ctx,
+		shutdown: false,
+		router:   &Router{methodMap: map[string]*RouterInfo{}},
 	}
 }
 
 // Start 服务启动
 func (server *Server) Start(context.Context) error {
 
-	for routerPath, handleFunc := range server.routerMap {
-		http.HandleFunc(routerPath, handleFunc)
+	for routerPath, _ := range server.router.methodMap {
+		http.HandleFunc(routerPath, server.HandleFunc(routerPath))
 	}
 	fmt.Println("http 启动 ", server.Option.address)
 	server.server.Addr = server.Option.address
@@ -58,20 +58,8 @@ func (server *Server) Stop(ctx context.Context) error {
 	return err
 }
 
-func (server *Server) AddRouter(routerMap map[string]func(any) any) {
-	for key, value := range routerMap {
-		server.routerMap[key] = server.HandleFunc(key, value)
-	}
-}
-
-func (server *Server) HandleFunc(key string, f func(any) any) func(writer http.ResponseWriter, request *http.Request) {
+func (server *Server) HandleFunc(key string) func(writer http.ResponseWriter, request *http.Request) {
 	return func(writer http.ResponseWriter, request *http.Request) {
-
-		// todo 完善 map泛型
-		var login LoginReq
-		req := map[string]any{
-			"/login": login,
-		}[key]
 
 		if server.shutdown {
 			writer.Write([]byte("shutdown中,拒绝请求"))
@@ -81,10 +69,17 @@ func (server *Server) HandleFunc(key string, f func(any) any) func(writer http.R
 		body := make([]byte, len)
 		// 将请求体中内容读到body中
 		request.Body.Read(body)
+		routerInfo := server.router.methodMap[key]
+		json.Unmarshal(body, routerInfo.reqBody)
 
-		json.Unmarshal(body, &req)
-		resp := f(req)
-		v, _ := json.Marshal(resp)
-		writer.Write(v)
+		ctx := NewContext{
+			writer:  writer,
+			Request: request,
+		}
+		routerInfo.handleFunc(routerInfo.reqBody, ctx)
 	}
+}
+
+func (server *Server) AddRouter(f func(router *Router)) {
+	f(server.router)
 }

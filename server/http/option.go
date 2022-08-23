@@ -1,4 +1,4 @@
-package http
+package best_http
 
 type Option struct {
 	address string
