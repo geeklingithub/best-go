@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="优化http,请求响应写法">
-      <change afterPath="$PROJECT_DIR$/demo/func_dec/funcs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/if_else/ifelse.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/package_dec/multi_same/a.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/package_dec/multi_same/b.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/package_dec/not_same/not_same.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/string/string.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/switch/switch.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/assignment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/const.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/var.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/var_wrong.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/list/arraylist.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/list/arraylist_test.go" afterDir="false" />
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="优化请求响应写法,完善中">
+      <change afterPath="$PROJECT_DIR$/demo/reflect/accessor.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/reflect/accessor_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/reflect/fields.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/reflect/fields_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/reflect/func.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/reflect/func_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/http/testhttp.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/testhttp.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,64 +56,61 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/86133/GolandProjects/best-go/demo",
-    "settings.editor.selected.configurable": "File.Encoding"
+    "last_opened_file_path": "C:/Users/Administrator/GolandProjects/best-go/demo/reflect",
+    "settings.editor.selected.configurable": "go.vgo"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\GolandProjects\best-go\demo\reflect" />
       <recent name="C:\Users\86133\GolandProjects\best-go\demo" />
       <recent name="C:\Users\86133\GolandProjects\best-go\demo\string" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server\http" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server\grpc" />
-      <recent name="C:\Users\Administrator\GolandProjects\best-go\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\GolandProjects\best-go\demo\debug" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/geeklingithub/best-go/demo/switch">
-    <configuration name="go build github.com/geeklingithub/best-go/demo/if_else" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="HTTP Request.TEST | #2">
+    <configuration name="Test in github.com/geeklingithub/best-go/demo/reflect" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/demo/if_else" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/demo/if_else/ifelse.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build github.com/geeklingithub/best-go/demo/switch" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/demo/switch" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/demo/switch/switch.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestArrayListAppend in github.com/geeklingithub/best-go/kit/list" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$/kit/list" />
+      <working_directory value="$PROJECT_DIR$/demo/reflect" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/kit/list" />
+      <package value="github.com/geeklingithub/best-go/demo/reflect" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestArrayListAppend\E$" />
+      <pattern value="^\QTest\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestArrayListAppend/append_234 in github.com/geeklingithub/best-go/kit/list" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestApp in github.com/geeklingithub/best-go/app" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$/kit/list" />
+      <working_directory value="$PROJECT_DIR$/app" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/kit/list" />
+      <package value="github.com/geeklingithub/best-go/app" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestArrayListAppend\E$/^\Qappend_234\E$" />
+      <pattern value="^\QTestApp\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIterateFuncs in github.com/geeklingithub/best-go/demo/reflect" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$/demo/reflect" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/demo/reflect" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestIterateFuncs\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TEST | GET request with a header" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="TEST | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" index="2" requestIdentifier="#2" runType="Run single request">
@@ -127,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/switch" />
-        <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/if_else" />
-        <item itemvalue="Go Test.TestArrayListAppend in github.com/geeklingithub/best-go/kit/list" />
-        <item itemvalue="Go Test.TestArrayListAppend/append_234 in github.com/geeklingithub/best-go/kit/list" />
         <item itemvalue="HTTP Request.TEST | #2" />
+        <item itemvalue="HTTP Request.TEST | GET request with a header" />
+        <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
+        <item itemvalue="Go Test.Test in github.com/geeklingithub/best-go/demo/reflect" />
+        <item itemvalue="Go Test.TestIterateFuncs in github.com/geeklingithub/best-go/demo/reflect" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +152,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="优化http,请求响应写法" />
   </component>
   <component name="VgoProject">
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://goproxy.cn,direct" />
+      </map>
+    </environment>
     <settings-migrated>true</settings-migrated>
   </component>
   <component name="XDebuggerManager">
@@ -179,5 +175,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/best_go$TestWriteHeapDumpFinalizers_in_github_com_geeklingithub_best_go_demo.out" NAME="TestWriteHeapDumpFinalizers in github.com/geeklingithub/best-go/demo Coverage Results" MODIFIED="1660898156566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/best_go$TestReflectMethod_in_github_com_geeklingithub_best_go_demo_reflect.out" NAME="TestReflectMethod in github.com/geeklingithub/best-go/demo/reflect Coverage Results" MODIFIED="1661150004749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
