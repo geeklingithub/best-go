@@ -1,8 +1,8 @@
 package best_http
 
 type Option struct {
-	address string
-
+	address      string
+	filterChain  Filter
 	shutdownFunc func()
 }
 
@@ -17,5 +17,11 @@ func Address(address string) OptFunc {
 func ShutdownFunc(shutdownFunc func()) OptFunc {
 	return func(option *Option) {
 		option.shutdownFunc = shutdownFunc
+	}
+}
+
+func FilterChain(fs ...FilterHandle) OptFunc {
+	return func(option *Option) {
+		option.filterChain = option.filterChain.AddFilter(fs...)
 	}
 }

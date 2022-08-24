@@ -20,7 +20,11 @@ type Server struct {
 func New(opts ...OptFunc) *Server {
 	//初始化配置项
 	//默认配置
-	o := &Option{}
+	o := &Option{
+		filterChain: func(reqBody any, c NewContext) {
+
+		},
+	}
 
 	//自定义配置
 	for _, opt := range opts {
@@ -42,7 +46,7 @@ func New(opts ...OptFunc) *Server {
 // Start 服务启动
 func (server *Server) Start(context.Context) error {
 
-	for routerPath, _ := range server.router.methodMap {
+	for routerPath := range server.router.methodMap {
 		http.HandleFunc(routerPath, server.HandleFunc(routerPath))
 	}
 	fmt.Println("http 启动 ", server.Option.address)
@@ -62,20 +66,31 @@ func (server *Server) HandleFunc(key string) func(writer http.ResponseWriter, re
 	return func(writer http.ResponseWriter, request *http.Request) {
 
 		if server.shutdown {
-			writer.Write([]byte("shutdown中,拒绝请求"))
-			return
+			_, err := writer.Write([]byte("shutdown中,拒绝请求"))
+			if err != nil {
+
+			}
 		}
-		len := request.ContentLength
-		body := make([]byte, len)
+		length := request.ContentLength
+		body := make([]byte, length)
 		// 将请求体中内容读到body中
-		request.Body.Read(body)
+		_, err := request.Body.Read(body)
+		if err != nil {
+
+		}
 		routerInfo := server.router.methodMap[key]
-		json.Unmarshal(body, routerInfo.reqBody)
+		err = json.Unmarshal(body, routerInfo.reqBody)
+		if err != nil {
+
+		}
 
 		ctx := NewContext{
 			writer:  writer,
 			Request: request,
 		}
+		//过滤连
+		server.Option.filterChain(routerInfo.reqBody, ctx)
+		//调用方法
 		routerInfo.handleFunc(routerInfo.reqBody, ctx)
 	}
 }

@@ -18,6 +18,7 @@ func TestApp(t *testing.T) {
 			time.Sleep(time.Minute)
 			fmt.Println("优雅关服完毕")
 		}),
+		//best_http.FilterChain(best_http.MetricFilterHandle),
 	)
 	businessHttp.AddRouter(login.RegisterRouter)
 
