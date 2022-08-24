@@ -2,7 +2,7 @@ package best_http
 
 import (
 	"encoding/json"
-	"fmt"
+	"errors"
 	"net/http"
 	"reflect"
 )
@@ -21,17 +21,17 @@ type NewContext struct {
 	Request *http.Request
 }
 
-func (ctx NewContext) SendResp(resp any) {
+func (ctx NewContext) SendResp(resp any) error {
 	respJson, _ := json.Marshal(resp)
-	ctx.writer.Write(respJson)
+	_, err := ctx.writer.Write(respJson)
+	return err
 }
 
-func (router Router) AddRouter(path string, fun any, reqBody any) {
+func (router Router) AddRouter(path string, fun any, reqBody any) error {
 	key := path
 	_, ok := router.methodMap[key]
 	if ok {
-		fmt.Println("repeat router")
-		return
+		return errors.New("repeat router")
 	}
 	router.methodMap[key] = &RouterInfo{
 		reqBody: reqBody,
@@ -42,4 +42,5 @@ func (router Router) AddRouter(path string, fun any, reqBody any) {
 			reflect.ValueOf(fun).Call(args)
 		},
 	}
+	return nil
 }

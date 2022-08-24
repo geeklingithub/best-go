@@ -1,6 +1,7 @@
 package once
 
 import (
+	"fmt"
 	"sync"
 	"testing"
 )
@@ -20,19 +21,18 @@ func run(t *testing.T, once *sync.Once, o *one, c chan bool) {
 }
 
 func TestOnce(t *testing.T) {
-	o := new(one)
-	once := new(sync.Once)
-	c := make(chan bool)
-	const N = 10
-	for i := 0; i < N; i++ {
-		go run(t, once, o, c)
-	}
-	for i := 0; i < N; i++ {
-		<-c
-	}
-	if *o != 1 {
-		t.Errorf("once failed outside run: %d is not 1", *o)
-	}
+	PrintOnce()
+	PrintOnce()
+	PrintOnce()
+}
+
+var once sync.Once
+
+// 这个方法，不管调用几次，只会输出一次
+func PrintOnce() {
+	once.Do(func() {
+		fmt.Println("只输出一次")
+	})
 }
 
 func TestOncePanic(t *testing.T) {

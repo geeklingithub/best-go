@@ -1,26 +1,35 @@
 package pool
 
 import (
-	"fmt"
-	"runtime/debug"
 	"sync"
 	"testing"
 )
 
-func TestPoolNew(t *testing.T) {
-	// disable GC so we can control when it happens.
-	defer debug.SetGCPercent(debug.SetGCPercent(-1))
+func TestPool(t *testing.T) {
+	pool := sync.Pool{
+		New: func() interface{} {
+			return &user{}
+		}}
 
-	i := 0
-	p := sync.Pool{
-		New: func() any {
-			i++
-			return i
-		},
-	}
+	// Get 返回的是 interface{}，所以需要类型断言
+	u := pool.Get().(*user)
+	// defer 还回去
+	defer pool.Put(u)
 
-	for i := 0; i < 100; i++ {
-		p.Put(-1)
-	}
-	fmt.Println()
+	// 紧接着重置 u 这个对象
+	u.Reset("Tom", "my_email@qq.com")
+
+	// 下边就是使用 u 来完成你的业务逻辑
+}
+
+type user struct {
+	Name  string
+	Email string
+}
+
+// 一般来说，复用对象都要求我们取出来之后，
+// 重置里面的字段
+func (u *user) Reset(name string, email string) {
+	u.Email = email
+	u.Name = name
 }

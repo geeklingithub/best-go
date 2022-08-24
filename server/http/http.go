@@ -80,6 +80,6 @@ func (server *Server) HandleFunc(key string) func(writer http.ResponseWriter, re
 	}
 }
 
-func (server *Server) AddRouter(f func(router *Router)) {
-	f(server.router)
+func (server *Server) AddRouter(f func(router *Router) error) error {
+	return f(server.router)
 }
