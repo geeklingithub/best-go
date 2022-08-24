@@ -79,7 +79,8 @@ func (server *Server) HandleFunc(key string) func(writer http.ResponseWriter, re
 
 		}
 		routerInfo := server.router.methodMap[key]
-		err = json.Unmarshal(body, routerInfo.reqBody)
+		reqBody := routerInfo.reqBody
+		err = json.Unmarshal(body, &reqBody)
 		if err != nil {
 
 		}

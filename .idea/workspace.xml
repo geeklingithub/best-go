@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加go语法测试用例">
-      <change afterPath="$PROJECT_DIR$/demo/atomic/atomic.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/channel/channel.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/init/init_order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/init/multi_init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/select/select.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/http/filter.go" afterDir="false" />
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加请求前过滤链支持">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/login/login_logic.go" beforeDir="false" afterPath="$PROJECT_DIR$/business/login/login_logic.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/option.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +71,7 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestApp in github.com/geeklingithub/best-go/app">
+  <component name="RunManager" selected="HTTP Request.TEST | #2">
     <configuration name="go build github.com/geeklingithub/best-go/demo/atomic" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -96,15 +90,6 @@
       <filePath value="$PROJECT_DIR$/demo/closure/closure.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/geeklingithub/best-go/demo/sync" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/demo/sync" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/demo/sync/map.go" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestApp in github.com/geeklingithub/best-go/app" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$/app" />
@@ -117,16 +102,19 @@
       <pattern value="^\QTestApp\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TEST | GET request with a header" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="TEST | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" index="2" requestIdentifier="#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
         <item itemvalue="HTTP Request.TEST | #2" />
+        <item itemvalue="HTTP Request.TEST | GET request with a header" />
+        <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
         <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/atomic" />
         <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/closure" />
-        <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/sync" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +144,8 @@
     <MESSAGE value="增加反射测试用例" />
     <MESSAGE value="优化http业务编程模型" />
     <MESSAGE value="增加go语法测试用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加go语法测试用例" />
+    <MESSAGE value="增加请求前过滤链支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加请求前过滤链支持" />
   </component>
   <component name="VgoProject">
     <environment>
@@ -173,11 +162,6 @@
           <url>file://$PROJECT_DIR$/demo/unsafe/unsafe.go</url>
           <line>20</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/server/http/http.go</url>
-          <line>91</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
