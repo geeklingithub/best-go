@@ -13,7 +13,7 @@ type Router struct {
 
 type RouterInfo struct {
 	reqBody    any
-	handleFunc func(any, NewContext)
+	handleFunc func(any, *NewContext)
 }
 
 type NewContext struct {
@@ -35,7 +35,7 @@ func (router Router) AddRouter(path string, fun any, reqBody any) error {
 	}
 	router.methodMap[key] = &RouterInfo{
 		reqBody: reqBody,
-		handleFunc: func(reqBody any, ctx NewContext) {
+		handleFunc: func(reqBody any, ctx *NewContext) {
 			args := make([]reflect.Value, 0, 2)
 			args = append(args, reflect.ValueOf(reqBody))
 			args = append(args, reflect.ValueOf(ctx))

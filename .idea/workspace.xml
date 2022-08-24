@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加请求前过滤链支持">
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="指针改为结构体">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/business/login/login_logic.go" beforeDir="false" afterPath="$PROJECT_DIR$/business/login/login_logic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/http/filter.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/filter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/http.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/http/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/router.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.TEST | #2">
+  <component name="RunManager" selected="HTTP Request.TEST | GET request with a header">
     <configuration name="go build github.com/geeklingithub/best-go/demo/atomic" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -110,8 +111,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.TEST | #2" />
         <item itemvalue="HTTP Request.TEST | GET request with a header" />
+        <item itemvalue="HTTP Request.TEST | #2" />
         <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
         <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/atomic" />
         <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/closure" />
@@ -145,7 +146,8 @@
     <MESSAGE value="优化http业务编程模型" />
     <MESSAGE value="增加go语法测试用例" />
     <MESSAGE value="增加请求前过滤链支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加请求前过滤链支持" />
+    <MESSAGE value="指针改为结构体" />
+    <option name="LAST_COMMIT_MESSAGE" value="指针改为结构体" />
   </component>
   <component name="VgoProject">
     <environment>

@@ -13,16 +13,16 @@ func RegisterRouter(router *besthttp.Router) error {
 }
 
 // Login 业务逻辑
-func Login(req LoginReq, ctx besthttp.NewContext) {
+func Login(req LoginReq, ctx *besthttp.NewContext) {
 	ctx.SendResp("Login")
 }
 
 // CreatePlayer 业务逻辑
-func CreatePlayer(req CreatePlayerReq, ctx besthttp.NewContext) {
+func CreatePlayer(req CreatePlayerReq, ctx *besthttp.NewContext) {
 	ctx.SendResp("CreatePlayer")
 }
 
 // SelectGateway 业务逻辑
-func SelectGateway(req SelectGatewayReq, ctx besthttp.NewContext) {
+func SelectGateway(req SelectGatewayReq, ctx *besthttp.NewContext) {
 	ctx.SendResp("CreatePlayer")
 }

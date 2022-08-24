@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"sync"
 )
 
 type Server struct {
@@ -14,6 +15,7 @@ type Server struct {
 	cancel   context.CancelFunc
 	shutdown bool
 	router   *Router
+	reqPool  sync.Pool
 }
 
 // New 服务初始化
@@ -21,7 +23,7 @@ func New(opts ...OptFunc) *Server {
 	//初始化配置项
 	//默认配置
 	o := &Option{
-		filterChain: func(reqBody any, c NewContext) {
+		filterChain: func(reqBody any, c *NewContext) {
 
 		},
 	}
@@ -40,6 +42,9 @@ func New(opts ...OptFunc) *Server {
 		ctx:      ctx,
 		shutdown: false,
 		router:   &Router{methodMap: map[string]*RouterInfo{}},
+		reqPool: sync.Pool{New: func() any {
+			return &NewContext{}
+		}},
 	}
 }
 
@@ -85,14 +90,17 @@ func (server *Server) HandleFunc(key string) func(writer http.ResponseWriter, re
 
 		}
 
-		ctx := NewContext{
-			writer:  writer,
-			Request: request,
-		}
+		c := server.reqPool.Get().(*NewContext)
+		defer func() {
+			server.reqPool.Put(c)
+		}()
+		c.writer = writer
+		c.Request = request
+
 		//过滤连
-		server.Option.filterChain(routerInfo.reqBody, ctx)
+		server.Option.filterChain(routerInfo.reqBody, c)
 		//调用方法
-		routerInfo.handleFunc(routerInfo.reqBody, ctx)
+		routerInfo.handleFunc(routerInfo.reqBody, c)
 	}
 }
 
