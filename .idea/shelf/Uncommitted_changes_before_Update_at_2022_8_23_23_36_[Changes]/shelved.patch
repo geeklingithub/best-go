@@ -1,0 +1,84 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"ALL\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2bcc6297-94bb-4a8b-87f8-337535f81976\" name=\"Changes\" comment=\"优化http,请求响应写法\">\r\n      <change afterPath=\"$PROJECT_DIR$/demo/func_dec/funcs.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/if_else/ifelse.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/package_dec/multi_same/a.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/package_dec/multi_same/b.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/package_dec/not_same/not_same.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/string/string.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/switch/switch.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/var_and_const/assignment.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/var_and_const/const.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/var_and_const/var.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/demo/var_and_const/var_wrong.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/kit/list/arraylist.go\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/kit/list/arraylist_test.go\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/go.mod\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/go.mod\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTTP Request\" />\r\n        <option value=\"Go File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"GOROOT\" url=\"file://$PROJECT_DIR$/../../../../Program Files/Go\" />\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HttpClientSelectedEnvironments\">\r\n    <file url=\"jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http\" environment=\"test\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2DW2g5YlrOv2peAt3zyqMRi99gR\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultGoTemplateProperty\": \"Go File\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.go.format.on.save.advertiser.fired\": \"true\",\r\n    \"RunOnceActivity.go.formatter.settings.were.checked\": \"true\",\r\n    \"RunOnceActivity.go.migrated.go.modules.settings\": \"true\",\r\n    \"RunOnceActivity.go.modules.go.list.on.any.changes.was.set\": \"true\",\r\n    \"RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"go.import.settings.migrated\": \"true\",\r\n    \"go.sdk.automatically.set\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/86133/GolandProjects/best-go/demo\",\r\n    \"settings.editor.selected.configurable\": \"File.Encoding\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\86133\\GolandProjects\\best-go\\demo\" />\r\n      <recent name=\"C:\\Users\\86133\\GolandProjects\\best-go\\demo\\string\" />\r\n      <recent name=\"C:\\Users\\Administrator\\GolandProjects\\best-go\\server\\http\" />\r\n      <recent name=\"C:\\Users\\Administrator\\GolandProjects\\best-go\\server\\grpc\" />\r\n      <recent name=\"C:\\Users\\Administrator\\GolandProjects\\best-go\\app\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Administrator\\GolandProjects\\best-go\\demo\\debug\" />\r\n      <recent name=\"C:\\Users\\Administrator\\GolandProjects\\best-go\\server\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Go Build.go build github.com/geeklingithub/best-go/demo/switch\">\r\n    <configuration name=\"go build github.com/geeklingithub/best-go/demo/if_else\" type=\"GoApplicationRunConfiguration\" factoryName=\"Go Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"best-go\" />\r\n      <working_directory value=\"$PROJECT_DIR$\" />\r\n      <kind value=\"PACKAGE\" />\r\n      <package value=\"github.com/geeklingithub/best-go/demo/if_else\" />\r\n      <directory value=\"$PROJECT_DIR$\" />\r\n      <filePath value=\"$PROJECT_DIR$/demo/if_else/ifelse.go\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"go build github.com/geeklingithub/best-go/demo/switch\" type=\"GoApplicationRunConfiguration\" factoryName=\"Go Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"best-go\" />\r\n      <working_directory value=\"$PROJECT_DIR$\" />\r\n      <kind value=\"PACKAGE\" />\r\n      <package value=\"github.com/geeklingithub/best-go/demo/switch\" />\r\n      <directory value=\"$PROJECT_DIR$\" />\r\n      <filePath value=\"$PROJECT_DIR$/demo/switch/switch.go\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"TestArrayListAppend in github.com/geeklingithub/best-go/kit/list\" type=\"GoTestRunConfiguration\" factoryName=\"Go Test\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"best-go\" />\r\n      <working_directory value=\"$PROJECT_DIR$/kit/list\" />\r\n      <root_directory value=\"$PROJECT_DIR$\" />\r\n      <kind value=\"PACKAGE\" />\r\n      <package value=\"github.com/geeklingithub/best-go/kit/list\" />\r\n      <directory value=\"$PROJECT_DIR$\" />\r\n      <filePath value=\"$PROJECT_DIR$\" />\r\n      <framework value=\"gotest\" />\r\n      <pattern value=\"^\\QTestArrayListAppend\\E$\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"TestArrayListAppend/append_234 in github.com/geeklingithub/best-go/kit/list\" type=\"GoTestRunConfiguration\" factoryName=\"Go Test\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"best-go\" />\r\n      <working_directory value=\"$PROJECT_DIR$/kit/list\" />\r\n      <root_directory value=\"$PROJECT_DIR$\" />\r\n      <kind value=\"PACKAGE\" />\r\n      <package value=\"github.com/geeklingithub/best-go/kit/list\" />\r\n      <directory value=\"$PROJECT_DIR$\" />\r\n      <filePath value=\"$PROJECT_DIR$\" />\r\n      <framework value=\"gotest\" />\r\n      <pattern value=\"^\\QTestArrayListAppend\\E$/^\\Qappend_234\\E$\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"TEST | #2\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" nameIsGenerated=\"true\" path=\"$PROJECT_DIR$/TEST.http\" index=\"2\" requestIdentifier=\"#2\" runType=\"Run single request\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Go Build.go build github.com/geeklingithub/best-go/demo/switch\" />\r\n        <item itemvalue=\"Go Build.go build github.com/geeklingithub/best-go/demo/if_else\" />\r\n        <item itemvalue=\"Go Test.TestArrayListAppend in github.com/geeklingithub/best-go/kit/list\" />\r\n        <item itemvalue=\"Go Test.TestArrayListAppend/append_234 in github.com/geeklingithub/best-go/kit/list\" />\r\n        <item itemvalue=\"HTTP Request.TEST | #2\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"应用停起服\" />\r\n    <MESSAGE value=\"pool测试\" />\r\n    <MESSAGE value=\"规划目录\" />\r\n    <MESSAGE value=\"增加http路由映射\" />\r\n    <MESSAGE value=\"增加http优雅退出调用\" />\r\n    <MESSAGE value=\"增加http优雅关服时,拒绝新请求处理\" />\r\n    <MESSAGE value=\"优化http,请求响应写法\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"优化http,请求响应写法\" />\r\n  </component>\r\n  <component name=\"VgoProject\">\r\n    <settings-migrated>true</settings-migrated>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"DlvLineBreakpoint\">\r\n          <url>file://$PROJECT_DIR$/demo/sync/once/once_test.go</url>\r\n          <line>26</line>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n      <default-breakpoints>\r\n        <breakpoint type=\"DlvErrorBreakpoint\" />\r\n      </default-breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/best_go$TestWriteHeapDumpFinalizers_in_github_com_geeklingithub_best_go_demo.out\" NAME=\"TestWriteHeapDumpFinalizers in github.com/geeklingithub/best-go/demo Coverage Results\" MODIFIED=\"1660898156566\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"GoCoverage\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fedd704fb948425ea6b17b293cecaed686f6440e)
++++ b/.idea/workspace.xml	(date 1661269004448)
+@@ -4,22 +4,8 @@
+     <option name="autoReloadType" value="ALL" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="优化http,请求响应写法">
+-      <change afterPath="$PROJECT_DIR$/demo/func_dec/funcs.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/if_else/ifelse.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/package_dec/multi_same/a.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/package_dec/multi_same/b.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/package_dec/not_same/not_same.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/string/string.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/switch/switch.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/assignment.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/const.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/var.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/demo/var_and_const/var_wrong.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/kit/list/arraylist.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/kit/list/arraylist_test.go" afterDir="false" />
++    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加go语法用例">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -49,23 +35,23 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "DefaultGoTemplateProperty": "Go File",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "go.import.settings.migrated": "true",
+-    "go.sdk.automatically.set": "true",
+-    "last_opened_file_path": "C:/Users/86133/GolandProjects/best-go/demo",
+-    "settings.editor.selected.configurable": "File.Encoding"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
++    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/86133/GolandProjects/best-go/demo&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\86133\GolandProjects\best-go\demo" />
+@@ -158,7 +144,8 @@
+     <MESSAGE value="增加http优雅退出调用" />
+     <MESSAGE value="增加http优雅关服时,拒绝新请求处理" />
+     <MESSAGE value="优化http,请求响应写法" />
+-    <option name="LAST_COMMIT_MESSAGE" value="优化http,请求响应写法" />
++    <MESSAGE value="增加go语法用例" />
++    <option name="LAST_COMMIT_MESSAGE" value="增加go语法用例" />
+   </component>
+   <component name="VgoProject">
+     <settings-migrated>true</settings-migrated>

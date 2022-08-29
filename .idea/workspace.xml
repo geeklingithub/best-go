@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="指针改为结构体">
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加go语法用例">
+      <change afterPath="$PROJECT_DIR$/kit/pool/limit_worker_container.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kit/pool/option.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kit/pool/pool.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kit/pool/unlimit_worker_container.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kit/pool/worker.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kit/pool/worker_container.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business/login/login_logic.go" beforeDir="false" afterPath="$PROJECT_DIR$/business/login/login_logic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/filter.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/filter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/http/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/http/router.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,17 +54,17 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/Administrator/GolandProjects/best-go/server/http",
+    "last_opened_file_path": "C:/Users/86133/GolandProjects/best-go/kit/pool",
     "settings.editor.selected.configurable": "go.vgo"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\86133\GolandProjects\best-go\kit\pool" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server\http" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\demo" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\demo\sync" />
       <recent name="C:\Users\Administrator\GolandProjects\best-go\demo\sync\once" />
-      <recent name="C:\Users\Administrator\GolandProjects\best-go\demo\struct" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\GolandProjects\best-go\business\login" />
