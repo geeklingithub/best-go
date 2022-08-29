@@ -46,7 +46,7 @@ func (wq *workerLoopQueue) isEmpty() bool {
 func (wq *workerLoopQueue) append(worker *Worker) error {
 
 	if wq.capacity == 0 {
-		return errWorkerContainerIsClosed
+		return errPoolIsClosed
 	}
 
 	if wq.isFull {

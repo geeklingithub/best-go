@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加go语法用例">
-      <change afterPath="$PROJECT_DIR$/kit/pool/limit_worker_container.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/pool/option.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/pool/pool.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/pool/unlimit_worker_container.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/pool/worker.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/pool/worker_container.go" afterDir="false" />
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="指针改为结构体">
+      <change afterPath="$PROJECT_DIR$/kit/queue/array_block_queue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_23_23_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_23_23_36__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_28_12_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_28_12_51__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/limit_worker_container.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/limit_worker_container.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/option.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/pool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/unlimit_worker_container.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/worker_container.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/worker_container.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +31,9 @@
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Go/src/time/time.go" root0="SKIP_INSPECTION" />
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
@@ -55,7 +60,7 @@
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "C:/Users/86133/GolandProjects/best-go/kit/pool",
-    "settings.editor.selected.configurable": "go.vgo"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
