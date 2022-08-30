@@ -1,0 +1,30 @@
+package pool
+
+type OrderPool struct {
+	workers      []*worker
+	maxWaitTasks int32
+}
+
+//NewOrderPool 新建有序任务池
+func NewOrderPool(workerSize int, maxWaitTasks int32) *OrderPool {
+
+	workers := make([]*worker, workerSize, workerSize)
+	pool := &OrderPool{
+		workers:      workers,
+		maxWaitTasks: maxWaitTasks,
+	}
+	for i := 0; i < len(workers); i++ {
+		workers[i] = &worker{
+			pool:            pool,
+			taskFuncChannel: make(chan *WorkerTask, maxWaitTasks),
+			currencyNum:     maxWaitTasks,
+		}
+	}
+	return pool
+}
+
+//submitTask 提交任务
+func (pool *OrderPool) submitTask(workerKey int, taskFunc func()) error {
+	workerLen := len(pool.workers)
+	return pool.workers[workerKey%workerLen].submitTask(taskFunc)
+}
