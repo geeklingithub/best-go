@@ -45,3 +45,9 @@ func (pool *OrderPool) SubmitTask(workerKey int, taskFunc func(context.Context))
 	workerLen := len(pool.workers)
 	return pool.workers[workerKey%workerLen].submitTask(taskFunc)
 }
+
+//SubmitScheduleTask 提交调度任务
+func (pool *OrderPool) SubmitScheduleTask(workerKey int, taskFunc func(context.Context)) (context.Context, error) {
+	workerLen := len(pool.workers)
+	return pool.workers[workerKey%workerLen].submitTask(taskFunc)
+}

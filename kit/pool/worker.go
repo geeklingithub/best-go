@@ -32,7 +32,7 @@ func (worker *worker) alterRunTaskNum(changeNum int) int32 {
 	return atomic.AddInt32(&worker.runTaskNum, int32(changeNum))
 }
 
-//alterRunTaskNum 修改令牌数
+//getRunTaskNum 修改令牌数
 func (worker *worker) getRunTaskNum() int32 {
 	return atomic.LoadInt32(&worker.runTaskNum)
 }

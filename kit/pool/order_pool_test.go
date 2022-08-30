@@ -8,7 +8,7 @@ import (
 )
 
 func TestNewOrderPool(t *testing.T) {
-	pool := NewOrderPool(100, 100)
+	pool := NewOrderPool(1, 100)
 
 	for i := 0; i < 10000; i++ {
 		index := i
