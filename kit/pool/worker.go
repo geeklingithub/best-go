@@ -1,6 +1,7 @@
 package pool
 
 import (
+	"context"
 	"errors"
 	"sync/atomic"
 )
@@ -22,7 +23,8 @@ type worker struct {
 }
 
 type WorkerTask struct {
-	taskFunc func()
+	taskFunc func(context.Context)
+	ctx      context.Context
 }
 
 //alterRunTaskNum 修改令牌数
@@ -36,15 +38,17 @@ func (worker *worker) getRunTaskNum() int32 {
 }
 
 //submitTask 提交任务
-func (worker *worker) submitTask(taskFunc func()) error {
+func (worker *worker) submitTask(taskFunc func(context.Context)) (ctx context.Context, err error) {
 
 	if worker.getRunTaskNum() >= worker.currencyNum {
-		return ErrOverloadTaskSize
+		return nil, ErrOverloadTaskSize
 	}
 
 	runTaskNum := worker.alterRunTaskNum(1)
+	ctx = context.WithValue(context.Background(), "key", nil)
 	worker.taskFuncChannel <- &WorkerTask{
 		taskFunc: taskFunc,
+		ctx:      ctx,
 	}
 
 	if runTaskNum == OPENED {
@@ -57,7 +61,7 @@ func (worker *worker) submitTask(taskFunc func()) error {
 				if workerTask == nil {
 					return
 				}
-				workerTask.taskFunc()
+				workerTask.taskFunc(ctx)
 				worker.alterRunTaskNum(-1)
 				if worker.getRunTaskNum() == CLOSED {
 					return
@@ -65,5 +69,5 @@ func (worker *worker) submitTask(taskFunc func()) error {
 			}
 		}()
 	}
-	return nil
+	return ctx, err
 }

@@ -1,5 +1,7 @@
 package pool
 
+import "context"
+
 type OrderPool struct {
 	workers      []*worker
 	maxWaitTasks int32
@@ -23,8 +25,23 @@ func NewOrderPool(workerSize int, maxWaitTasks int32) *OrderPool {
 	return pool
 }
 
-//submitTask 提交任务
-func (pool *OrderPool) submitTask(workerKey int, taskFunc func()) error {
+//Shutdown 优雅关闭
+func (pool *OrderPool) Shutdown() {
+
+}
+
+//ShutdownNow 立即关闭
+func (pool *OrderPool) ShutdownNow() {
+
+}
+
+//WaitingShutdown 等待关闭
+func (pool *OrderPool) WaitingShutdown() {
+
+}
+
+//SubmitTask 提交任务
+func (pool *OrderPool) SubmitTask(workerKey int, taskFunc func(context.Context)) (context.Context, error) {
 	workerLen := len(pool.workers)
 	return pool.workers[workerKey%workerLen].submitTask(taskFunc)
 }

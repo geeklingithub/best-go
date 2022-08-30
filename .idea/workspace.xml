@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="指针改为结构体">
-      <change afterPath="$PROJECT_DIR$/kit/queue/array_block_queue.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_23_23_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_23_23_36__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_28_12_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_8_28_12_51__Changes_.xml" afterDir="false" />
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="提交标识有序协程池">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kit/pool/limit_worker_container.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/limit_worker_container.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kit/pool/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/option.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kit/pool/pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/pool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kit/pool/unlimit_worker_container.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kit/pool/worker_container.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/worker_container.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/order_pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/order_pool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/order_pool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/order_pool_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/worker.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +54,8 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/86133/GolandProjects/best-go/kit/pool",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "last_opened_file_path": "C:/Users/Administrator",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -79,25 +74,7 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\server" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.TEST | GET request with a header">
-    <configuration name="go build github.com/geeklingithub/best-go/demo/atomic" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/demo/atomic" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/demo/atomic/atomic.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build github.com/geeklingithub/best-go/demo/closure" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/demo/closure" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/demo/closure/closure.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (1)">
     <configuration name="TestApp in github.com/geeklingithub/best-go/app" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$/app" />
@@ -110,6 +87,30 @@
       <pattern value="^\QTestApp\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$/kit/pool" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/kit/pool" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestNewOrderPool\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$/kit/pool" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/kit/pool" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestNewOrderPool\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TEST | GET request with a header" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -118,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (1)" />
+        <item itemvalue="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool" />
         <item itemvalue="HTTP Request.TEST | GET request with a header" />
         <item itemvalue="HTTP Request.TEST | #2" />
         <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
-        <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/atomic" />
-        <item itemvalue="Go Build.go build github.com/geeklingithub/best-go/demo/closure" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +155,9 @@
     <MESSAGE value="增加go语法测试用例" />
     <MESSAGE value="增加请求前过滤链支持" />
     <MESSAGE value="指针改为结构体" />
-    <option name="LAST_COMMIT_MESSAGE" value="指针改为结构体" />
+    <MESSAGE value="增加阻塞队列" />
+    <MESSAGE value="提交标识有序协程池" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交标识有序协程池" />
   </component>
   <component name="VgoProject">
     <environment>
@@ -181,5 +184,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/best_go$TestWriteHeapDumpFinalizers_in_github_com_geeklingithub_best_go_demo.out" NAME="TestWriteHeapDumpFinalizers in github.com/geeklingithub/best-go/demo Coverage Results" MODIFIED="1660898156566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/best_go$TestReflectMethod_in_github_com_geeklingithub_best_go_demo_reflect.out" NAME="TestReflectMethod in github.com/geeklingithub/best-go/demo/reflect Coverage Results" MODIFIED="1661150004749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/best_go$TestNewOrderPool_in_github_com_geeklingithub_best_go_kit_pool.out" NAME="TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool Coverage Results" MODIFIED="1661828532519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
