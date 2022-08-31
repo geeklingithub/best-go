@@ -8,19 +8,18 @@ import (
 )
 
 func TestNewOrderPool(t *testing.T) {
-	pool := NewOrderPool(1, 100)
+	pool := NewOrderPool(100, 100, 5*time.Minute)
 
 	for i := 0; i < 10000; i++ {
 		index := i
 
-		ctx, err := pool.SubmitTask(index, func(ctx context.Context) {
+		_, err := pool.SubmitTask(index, func(ctx context.Context) {
 			fmt.Println("count", index, index%100)
 		})
 		if err != nil {
 			return
 		}
 
-		fmt.Println(ctx, err)
 	}
 
 	time.Sleep(time.Minute)

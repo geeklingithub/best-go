@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="标识有序协程池&#10;增加返回值">
-      <change afterPath="$PROJECT_DIR$/kit/pool/delay_queue.go" afterDir="false" />
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加延时队列中">
+      <change afterPath="$PROJECT_DIR$/demo/context/context_text_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kit/pool/delay_queue.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/kit/pool/order_pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/order_pool.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kit/pool/order_pool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/order_pool_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kit/pool/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/worker.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kit/queue/array_block_queue.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,20 +76,32 @@
       <recent name="C:\Users\Administrator\GolandProjects\best-go\demo\debug" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (1)">
-    <configuration name="TestApp in github.com/geeklingithub/best-go/app" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (2)">
+    <configuration name="TestContextCancel in github.com/geeklingithub/best-go/demo/context" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
-      <working_directory value="$PROJECT_DIR$/app" />
+      <working_directory value="$PROJECT_DIR$/demo/context" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/geeklingithub/best-go/app" />
+      <package value="github.com/geeklingithub/best-go/demo/context" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestApp\E$" />
+      <pattern value="^\QTestContextCancel\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="best-go" />
+      <working_directory value="$PROJECT_DIR$/kit/pool" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/geeklingithub/best-go/kit/pool" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestNewOrderPool\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="best-go" />
       <working_directory value="$PROJECT_DIR$/kit/pool" />
       <root_directory value="$PROJECT_DIR$" />
@@ -116,16 +128,13 @@
     <configuration name="TEST | GET request with a header" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" requestIdentifier="GET request with a header" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="TEST | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/TEST.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (2)" />
+        <item itemvalue="Go Test.TestContextCancel in github.com/geeklingithub/best-go/demo/context" />
         <item itemvalue="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool (1)" />
         <item itemvalue="Go Test.TestNewOrderPool in github.com/geeklingithub/best-go/kit/pool" />
         <item itemvalue="HTTP Request.TEST | GET request with a header" />
-        <item itemvalue="HTTP Request.TEST | #2" />
-        <item itemvalue="Go Test.TestApp in github.com/geeklingithub/best-go/app" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +169,8 @@
     <MESSAGE value="增加阻塞队列" />
     <MESSAGE value="提交标识有序协程池" />
     <MESSAGE value="标识有序协程池&#10;增加返回值" />
-    <option name="LAST_COMMIT_MESSAGE" value="标识有序协程池&#10;增加返回值" />
+    <MESSAGE value="增加延时队列中" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加延时队列中" />
   </component>
   <component name="VgoProject">
     <environment>
@@ -177,6 +187,11 @@
           <url>file://$PROJECT_DIR$/demo/unsafe/unsafe.go</url>
           <line>20</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/../../../../Program Files/Go/src/sort/sort.go</url>
+          <line>189</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
