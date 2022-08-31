@@ -30,7 +30,7 @@ func NewOrderPool(workerSize int, maxWaitTasks int32, shutdownTimeout time.Durat
 		workerCtx, workerCancel := context.WithCancel(ctx)
 		workers[i] = &worker{
 			pool:            pool,
-			taskFuncChannel: make(chan *WorkerTask, maxWaitTasks),
+			taskFuncChannel: make(chan *FutureTask, maxWaitTasks),
 			currencyNum:     maxWaitTasks,
 			ctx:             workerCtx,
 			cancel:          workerCancel,
@@ -54,7 +54,7 @@ func (pool *OrderPool) ShutdownNow() {
 }
 
 //SubmitTask 提交任务
-func (pool *OrderPool) SubmitTask(workerKey int, taskFunc func(context.Context)) (context.Context, error) {
+func (pool *OrderPool) SubmitTask(workerKey int, taskFunc func() any) (*FutureTask, error) {
 	workerLen := len(pool.workers)
 	return pool.workers[workerKey%workerLen].submitTask(taskFunc)
 }

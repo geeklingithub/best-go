@@ -20,7 +20,7 @@ var (
 
 type worker struct {
 	pool            *OrderPool       // 工人所属池子
-	taskFuncChannel chan *WorkerTask // 任务
+	taskFuncChannel chan *FutureTask // 任务
 	currencyNum     int32            //最大并发数
 	runTaskNum      int32            // 当前任务数
 	state           int32            // 消费任务的goroutine状态
@@ -29,9 +29,8 @@ type worker struct {
 	closedSignal    chan bool //退出worker channel通信
 }
 
-type WorkerTask struct {
-	taskFunc func(context.Context)
-	ctx      context.Context
+type WorkerTaskResult struct {
+	result any
 }
 
 //alterRunTaskNum 修改任务数
@@ -45,7 +44,7 @@ func (worker *worker) getRunTaskNum() int32 {
 }
 
 //submitTask 提交任务
-func (worker *worker) submitTask(taskFunc func(context.Context)) (ctx context.Context, err error) {
+func (worker *worker) submitTask(taskFunc func() any) (*FutureTask, error) {
 
 	if atomic.LoadInt32(&worker.state) == WorkerClosed {
 		return nil, ErrWorkerClose
@@ -60,38 +59,45 @@ func (worker *worker) submitTask(taskFunc func(context.Context)) (ctx context.Co
 	}
 
 	worker.alterRunTaskNum(1)
-	ctx = context.Background()
-	worker.taskFuncChannel <- &WorkerTask{
+	futureTaskCtx, futureTaskCancel := context.WithCancel(worker.ctx)
+	futureTask := &FutureTask{
 		taskFunc: taskFunc,
-		ctx:      ctx,
+		ctx:      futureTaskCtx,
+		cancel:   futureTaskCancel,
 	}
+	worker.taskFuncChannel <- futureTask
 
 	// state 保证统一时刻只有一个goroutine消费任务
 	if atomic.CompareAndSwapInt32(&worker.state, GoClosed, GoOpened) {
-		go func() {
-			defer func() {
-				atomic.CompareAndSwapInt32(&worker.state, GoOpened, GoClosed)
-			}()
-
-			//消费任务
-			for workerTask := range worker.taskFuncChannel {
-
-				if worker.isClosed() {
-					return
-				}
-
-				if workerTask == nil {
-					return
-				}
-				workerTask.taskFunc(workerTask.ctx)
-				taskNum := worker.alterRunTaskNum(-1)
-				if taskNum == 0 {
-					return
-				}
-			}
-		}()
+		worker.run()
 	}
-	return ctx, err
+	return futureTask, nil
+}
+
+func (worker *worker) run() {
+	go func() {
+		defer func() {
+			atomic.CompareAndSwapInt32(&worker.state, GoOpened, GoClosed)
+		}()
+
+		//消费任务
+		for futureTask := range worker.taskFuncChannel {
+
+			if worker.isClosed() {
+				return
+			}
+
+			if futureTask == nil {
+				return
+			}
+			futureTask.taskResult = futureTask.taskFunc()
+			futureTask.cancel()
+			taskNum := worker.alterRunTaskNum(-1)
+			if taskNum == 0 {
+				return
+			}
+		}
+	}()
 }
 
 //shutdown 优雅关闭

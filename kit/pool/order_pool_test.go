@@ -1,7 +1,6 @@
 package pool
 
 import (
-	"context"
 	"fmt"
 	"testing"
 	"time"
@@ -13,12 +12,19 @@ func TestNewOrderPool(t *testing.T) {
 	for i := 0; i < 10000; i++ {
 		index := i
 
-		_, err := pool.SubmitTask(index, func(ctx context.Context) {
+		futureTask, err := pool.SubmitTask(index, func() any {
 			fmt.Println("count", index, index%100)
+			return index
 		})
 		if err != nil {
 			return
 		}
+		go func() {
+			select {
+			case <-futureTask.ctx.Done():
+				fmt.Println("futureTask", futureTask.taskResult)
+			}
+		}()
 
 	}
 

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加延时队列中">
-      <change afterPath="$PROJECT_DIR$/demo/context/context_text_test.go" afterDir="false" />
+    <list default="true" id="2bcc6297-94bb-4a8b-87f8-337535f81976" name="Changes" comment="增加有序协程池退出逻辑">
+      <change afterPath="$PROJECT_DIR$/kit/pool/future_task.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kit/pool/delay_queue.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/kit/pool/order_pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/order_pool.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kit/pool/order_pool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/order_pool_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kit/pool/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/kit/pool/worker.go" afterDir="false" />
@@ -170,7 +169,8 @@
     <MESSAGE value="提交标识有序协程池" />
     <MESSAGE value="标识有序协程池&#10;增加返回值" />
     <MESSAGE value="增加延时队列中" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加延时队列中" />
+    <MESSAGE value="增加有序协程池退出逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加有序协程池退出逻辑" />
   </component>
   <component name="VgoProject">
     <environment>
